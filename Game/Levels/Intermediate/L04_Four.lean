@@ -33,6 +33,9 @@ def commutator {G : Type*} [Group G]
 def conjugate {G : Type*} [group G]
 (x y : G) : G := y⁻¹ * x * y
 ```
+
+We denote by `[x ; y]` the commutator of x and y, and by `y ^ x` the conjugate of x by y. 
+
 ```
 lemma commutator_def {G : Type*} [Group G]
 {x y : G} : [x ; y] = x⁻¹ * y⁻¹ * x * y := rfl
@@ -88,9 +91,9 @@ we can solve this with `simp` using `simp[add_assoc]`.
 NewTactic simp
 
 LemmaDoc commutator_def as "commutator_def" in "Group Theory"
-  "The definition of commutator."
+  "The statement echoing the definition of commutator."
 LemmaDoc conjugate_def as "conjugate_def" in "Group Theory"
-  "The definition of conjugate."
+  "The statement echoing the definition of conjugate."
 LemmaDoc inv_mul_cancel_right as "inv_mul_cancel_right" in "Group Theory"
   "Cancelling inverses on the right. "
 LemmaDoc inv_mul_self as "inv_mul_self" in "Group Theory"
