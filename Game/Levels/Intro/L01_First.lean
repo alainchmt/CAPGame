@@ -102,7 +102,7 @@ A goal of the form `A = A` can be solved using the reflexivity tactic called `rf
 For example, if the goal is `x + y = x + y`, then `rfl` will solve it.
 
 Now try to use a sequence of `rewrite` steps to prove the goal in the middle screen by typing these steps into the box
-on the right. To finish the proof, you can use `rfl`. We note the convention that `x + y + z` means `(x + y) + z`.
+on that screen. To finish the proof, you can use `rfl`. We note the convention that `x + y + z` means `(x + y) + z`.
 
 It's worth noting that while this game introduces basic lemmas and tactics for proving
 mathematical statements in Lean, Lean does have more advanced
@@ -158,7 +158,7 @@ The `rw` tactic is a way to do 'substituting in'.
 
 If `h : A = B` is in your local context (i.e., a proof of `A = B`)
 and if your goal contains one or more `A`s, then `rw [h]`
-will change them all to `B`'s. This will also work if you have a proof of a if-and-only-if statement `h : A ↔ B`. 
+will change them all to `B`'s. This will also work if you have a proof of an if-and-only-if statement `h : A ↔ B`. 
 
 Important note: if `h` is not a proof of the form `A = B`
 or `A ↔ B` (for example if `h` is a function, an implication,
