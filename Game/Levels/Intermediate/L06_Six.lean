@@ -28,7 +28,7 @@ Statement (X Y Z : Type*) [TopologicalSpace X] [TopologicalSpace Y] [Topological
 
 
 LemmaDoc continuous_def as "continuous_def" in "Topology"
-  "Definition of a continuous map."
+  "The statement echoing the definition of a continuous map."
 
 LemmaDoc Set.preimage_comp as "Set.preimage_comp" in "Topology"
   "The preimage of a set along the composition of maps."
