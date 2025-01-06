@@ -75,7 +75,7 @@ The symbol `:` is used to say that `x` and `y` are natural numbers, this is simi
 normally write `x ∈ ℕ`, and you should think of `:` as meaning `∈`.
 The symbol `:` is also used after the name of the lemma, and it has the same meaning!
 Here within the lemma `x : ℕ` gives a name to a natural number and
-`add_comm : ∀ x y, x + y = y + x` gives a name to the statement that addition is commutative.
+`add_comm : ∀ x y, x + y = y + x` gives a name to the proof of the statement saying that addition is commutative.
 
 The lemma `add_comm` is a 'for all' statement, so in order to get the statement that addition
 commutes for a _specific_ pair of natural numbers rather than variables `x` and `y`,
@@ -101,7 +101,7 @@ again.
 A goal of the form `A = A` can be solved using the reflexivity tactic called `rfl`.
 For example, if the goal is `x + y = x + y`, then `rfl` will solve it.
 
-Now try to use a sequence of `rewrite` steps to prove the lemma below by typing them into the box
+Now try to use a sequence of `rewrite` steps to prove the goal in the middle screen by typing these steps into the box
 on the right. To finish the proof, you can use `rfl`. We note the convention that `x + y + z` means `(x + y) + z`.
 
 It's worth noting that while this game introduces basic lemmas and tactics for proving
@@ -154,17 +154,11 @@ of the goal.
 
 ## Details
 
-The `rw` tactic is a way to do 'substituting in'. There
-are two distinct situations where to use these tactics.
+The `rw` tactic is a way to do 'substituting in'. 
 
-1) If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
-in your local context
+If `h : A = B` is in your local context (i.e., a proof of `A = B`)
 and if your goal contains one or more `A`s, then `rw [h]`
-will change them all to `B`'s.
-
-2) The `rw` tactic will also work with proofs of theorems
-which are equalities (look for them in the
-menu on the right, within Theorems).
+will change them all to `B`'s. This will also work if you have a proof of a if-and-only-if statement `h : A ↔ B`. 
 
 Important note: if `h` is not a proof of the form `A = B`
 or `A ↔ B` (for example if `h` is a function, an implication,
