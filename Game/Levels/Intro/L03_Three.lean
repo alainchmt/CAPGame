@@ -51,10 +51,10 @@ Statement (P Q R : Prop) (hPQ : P ↔ Q) (hQR : Q ↔ ¬R) :
   rw [not_not]
 
 LemmaDoc iff_self as "iff_self" in "Logic"
-  "Says that `(P ↔ P) ↔ True`. Here the symbol `=`
+  "Says that `(p ↔ p) ↔ True`. Here the symbol `=`
   means the same as `↔`. "
 LemmaDoc iff_true as "iff_true" in "Logic"
-  "Says that `(P ↔ True) ↔ P`. Here the symbol `=`
+  "Says that `(p ↔ True) ↔ p`. Here the symbol `=`
   means the same as `↔`. "
 LemmaDoc Classical.not_not as "not_not" in "Logic"
   "The Double Negation Theorem. "
