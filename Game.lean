@@ -46,7 +46,6 @@ The CAP Game, was created as material for the course computer assisted proofs at
 The original version can be found here https://alexjbest.github.io/CAP-game/.
 Based on templates from Imperial College London and Universitat Autònoma de Barcelona.
 This version is adapted to Lean 4 using the Lean4 Game Engine.
-Lean is a proof assistant being developed at Microsoft Research.
 "
 
 /-! Information to be displayed on the servers landing page. -/
