@@ -40,12 +40,15 @@ Below are two useful results you can use to finish this level.
 ``` lemma one_mul : ∀ x, 1 * x = x ```
 
 "
-LemmaDoc Intro.add_zero as "add_zero" in "Arithmetic"
-  "Adding zero on the right."
-LemmaDoc Intro.one_mul as "one_mul" in "Arithmetic"
-  "Multiplying by one on the left."
 
-NewLemma Intro.add_zero Intro.one_mul
+/-- Adding zero on the right. -/
+TheoremDoc Intro.add_zero as "add_zero" in "Arithmetic"
+
+/-- Multiplying by one on the left. -/
+TheoremDoc Intro.one_mul as "one_mul" in "Arithmetic"
+
+
+NewTheorem Intro.add_zero Intro.one_mul
 
 open Intro
 Statement (x y : ℕ) (hx : x + 0 = 1 * y) : x + y = y + y := by

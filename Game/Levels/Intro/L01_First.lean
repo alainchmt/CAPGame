@@ -115,10 +115,11 @@ automation tools that can solve certain goals in one go.
   The next two steps of the proof go on the next lines, and are similar to the first, can you work
   them out?" -/
 
-LemmaDoc Intro.add_comm as "add_comm" in "Arithmetic"
-"The commutativity of addition."
+/-- The commutativity of addition. -/
+TheoremDoc Intro.add_comm as "add_comm" in "Arithmetic"
 
-NewLemma Intro.add_comm
+
+NewTheorem Intro.add_comm
 
 open Intro
 Statement (x y z w : ℕ) : x + y + (z + w) = w + z + (y + x) := by
@@ -134,11 +135,11 @@ Statement (x y z w : ℕ) : x + y + (z + w) = w + z + (y + x) := by
   rewrite [add_comm x y]
   rfl
 
+/-- This tactic proves goals of the form `⊢ A = A` -/
 TacticDoc rfl
-" This tactic proves goals of the form `⊢ A = A` "
 
-TacticDoc rewrite
-"
+
+/--
 ## Summary
 
 If `h` is a proof of `X = Y`, then `rewrite [h]` will change
@@ -154,11 +155,11 @@ of the goal.
 
 ## Details
 
-The `rw` tactic is a way to do 'substituting in'. 
+The `rw` tactic is a way to do 'substituting in'.
 
 If `h : A = B` is in your local context (i.e., a proof of `A = B`)
 and if your goal contains one or more `A`s, then `rw [h]`
-will change them all to `B`'s. This will also work if you have a proof of an if-and-only-if statement `h : A ↔ B`. 
+will change them all to `B`'s. This will also work if you have a proof of an if-and-only-if statement `h : A ↔ B`.
 
 Important note: if `h` is not a proof of the form `A = B`
 or `A ↔ B` (for example if `h` is a function, an implication,
@@ -202,7 +203,8 @@ Goal:
   D = B
 ```
 then `rw [h1] at h2` will turn `h2` into `h2 : B ∪ B ∩ C = D` (remember operator precedence).
-"
+-/
+TacticDoc rewrite
 
 NewTactic rewrite rfl
 NewHiddenTactic rw

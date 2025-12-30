@@ -16,8 +16,7 @@ Statement (A B : Set X) (x : X) (h : A = B) : x ∈ A → x ∈ B := by
   rw [← h]
   exact h1
 
-TacticDoc intro
-"
+/--
 ## Summary:
 
 `intro p` will turn a goal `⊢ P → Q` into a hypothesis `p : P`
@@ -49,6 +48,7 @@ If your goal is an implication $P \\implies Q$ then Lean writes
 this as `⊢ P → Q`, and `intro p` can be thought of as meaning
 'let $p$ be a proof of $P$', or more informally 'let's assume that
 $P$ is true'. The goal changes to `⊢ Q` and the hypothesis `p : P`
-appears in the local context. "
+appears in the local context. -/
+TacticDoc intro
 
 NewTactic intro

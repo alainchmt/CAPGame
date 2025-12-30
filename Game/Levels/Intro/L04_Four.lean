@@ -44,19 +44,25 @@ Statement (P Q : Prop) (h : Q ∧ P ∧ Q) :
   rw [and_self] at h
   exact h
 
-LemmaDoc or_and_right as "or_and_right" in "Logic"
-  " "
-LemmaDoc not_and_self_iff as "not_and_self_iff" in "Logic"
-  " "
-LemmaDoc or_false as "or_false" in "Logic"
-  " "
-LemmaDoc and_comm as "and_comm" in "Logic"
-  "∧ is commutative"
-LemmaDoc and_assoc as "and_assoc" in "Logic"
-  "∧ is associative"
-LemmaDoc and_self as "and_self" in "Logic"
-  " "
-TacticDoc exact "
+/-- -/
+TheoremDoc or_and_right as "or_and_right" in "Logic"
+
+/-- -/
+TheoremDoc not_and_self_iff as "not_and_self_iff" in "Logic"
+
+/-- -/
+TheoremDoc or_false as "or_false" in "Logic"
+
+/-- ∧ is commutative -/
+TheoremDoc and_comm as "and_comm" in "Logic"
+
+/-- ∧ is associative -/
+TheoremDoc and_assoc as "and_assoc" in "Logic"
+
+/-- -/
+TheoremDoc and_self as "and_self" in "Logic"
+
+/--
 ## Summary
 
 If the goal is `⊢ X` then `exact x` will close the goal if
@@ -85,7 +91,8 @@ above goal could be solved with
 `exact j(h(p)),`
 
 because $j(h(p))$ is easily checked to be a term of type $R$
-(i.e., an element of the set $R$, or a proof of the proposition $R$)."
+(i.e., an element of the set $R$, or a proof of the proposition $R$).-/
+TacticDoc exact
 
-NewLemma or_and_right not_and_self_iff or_false and_comm and_assoc and_self
+NewTheorem or_and_right not_and_self_iff or_false and_comm and_assoc and_self
 NewTactic exact

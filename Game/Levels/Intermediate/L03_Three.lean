@@ -16,12 +16,13 @@ Statement : ∃ n : ℕ, 8 < n ∧ n < 10 := by
   exact Nat.lt_succ_self 8
   exact Nat.lt_succ_self 9
 
-TacticDoc constructor
-" When given a goal that is an `∧` (and) of two propositions, the `constructor` tactic
-will produce two goals, one for each side, that can be solved individually."
 
-TacticDoc use
-"When the goal is to prove an existential `∃`, we can
+/-- When given a goal that is an `∧` (and) of two propositions, the `constructor` tactic
+will produce two goals, one for each side, that can be solved individually.-/
+TacticDoc constructor
+
+
+/-- When the goal is to prove an existential `∃`, we can
 supply the witness (an example that has the desired property)
 using the tactic `use`.
 
@@ -33,11 +34,12 @@ If the goal is
 then we have to take `n` to be zero, so we type `use 0`.
 The remaining goal will then be that
 `0 + 1 = 1`
-which is provable with `zero_add`."
+which is provable with `zero_add`.-/
+TacticDoc use
 
 NewTactic constructor use
 
-LemmaDoc Nat.lt_succ_self as "Nat.lt_succ_self" in "Inequalities"
-  "A natural number is smaller than its successor."
+ /-- A natural number is smaller than its successor. -/
+TheoremDoc Nat.lt_succ_self as "Nat.lt_succ_self" in "Inequalities"
 
-NewLemma Nat.lt_succ_self
+NewTheorem Nat.lt_succ_self

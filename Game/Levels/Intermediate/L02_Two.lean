@@ -1,5 +1,5 @@
 import Game.Metadata
-import Mathlib.Topology.ContinuousFunction.Polynomial
+import Mathlib.Topology.ContinuousMap.Polynomial
 
 World "Intermediate"
 Level 2
@@ -41,8 +41,8 @@ Statement : Continuous (fun (x : ℝ) => 5 * x ^ 2 + x + 6) := by
   apply continuous_id
   apply continuous_const
 
-TacticDoc apply
-"## Summary
+
+/-- ## Summary
 
 If `h : P → Q` is a hypothesis and the goal is `⊢ Q`, then
 `apply h` changes the goal to `⊢ P`.
@@ -58,19 +58,25 @@ term of type `P`. A mathematician might say: 'We need
 to construct an element of $Q$, but we have a function $h:P \\to Q$
 so it suffices to construct an element of $P$'. Or alternatively
 'we need to prove $Q$, but we have a proof $h$ that $P \\implies Q$
-so it suffices to prove $P$'."
+so it suffices to prove $P$'.-/
+TacticDoc apply
 
 NewTactic apply
 
-LemmaDoc Continuous.add as "Continuous.add" in "Topology"
-  "Adding two continuous functions is continuous."
-LemmaDoc Continuous.mul as "Continuous.mul" in "Topology"
-  "Multiplying two continuous functions is continuous."
-LemmaDoc Continuous.pow as "Continuous.pow" in "Topology"
-  "The power of a continuous function is continuous."
-LemmaDoc continuous_const as "continuous_const" in "Topology"
-  "A constant function is continuous"
-LemmaDoc continuous_id as "continuous_id" in "Topology"
-  "The identity function is continuous"
+/-- Adding two continuous functions is continuous.-/
+TheoremDoc Continuous.add as "Continuous.add" in "Topology"
 
-NewLemma Continuous.add Continuous.mul Continuous.pow continuous_const continuous_id
+/-- Multiplying two continuous functions is continuous. -/
+TheoremDoc Continuous.mul as "Continuous.mul" in "Topology"
+
+/-- The power of a continuous function is continuous.-/
+TheoremDoc Continuous.pow as "Continuous.pow" in "Topology"
+
+/-- A constant function is continuous -/
+TheoremDoc continuous_const as "continuous_const" in "Topology"
+
+/-- The identity function is continuous -/
+TheoremDoc continuous_id as "continuous_id" in "Topology"
+
+
+NewTheorem Continuous.add Continuous.mul Continuous.pow continuous_const continuous_id

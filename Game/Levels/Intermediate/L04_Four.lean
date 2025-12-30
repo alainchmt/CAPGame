@@ -34,7 +34,7 @@ def conjugate {G : Type*} [group G]
 (x y : G) : G := y⁻¹ * x * y
 ```
 
-We denote by `[x ; y]` the commutator of x and y, and by `y ^ x` the conjugate of x by y. 
+We denote by `[x ; y]` the commutator of x and y, and by `y ^ x` the conjugate of x by y.
 
 ```
 lemma commutator_def {G : Type*} [Group G]
@@ -45,6 +45,8 @@ lemma conjugate_def {G : Type*} [Group G]
 {x y : G} : y ^ x = x⁻¹ * y * x := rfl
 ```
  "
+namespace MyCommutator
+
 def commutator {G : Type*} [Group G] (x y : G) : G := x⁻¹ * y⁻¹ * x * y
 instance hasBracket {G : Type*} [Group G] : Bracket G G := ⟨commutator⟩
 notation "["x";"y"]" => Bracket.bracket x y
@@ -61,10 +63,12 @@ lemma conjugate_def {G : Type*} [Group G] {x y : G} : y ^ x = x⁻¹ * y * x := 
 Statement {G : Type} [Group G] {x : G} : [x ; x] = 1 := by
   rw [commutator_def]
   rw [inv_mul_cancel_right]
-  rw [inv_mul_self]
+  rw [inv_mul_cancel]
+
+end MyCommutator
 
 
-TacticDoc simp "
+/--
 ## Summary
 
 The `simp` tactic is a high-level tactic which tries
@@ -87,16 +91,21 @@ If our goal is this:
 ```
 
 we can solve this with `simp` using `simp[add_assoc]`.
-"
+-/
+TacticDoc simp
+
 NewTactic simp
 
-LemmaDoc commutator_def as "commutator_def" in "Group Theory"
-  "The statement echoing the definition of commutator."
-LemmaDoc conjugate_def as "conjugate_def" in "Group Theory"
-  "The statement echoing the definition of conjugate."
-LemmaDoc inv_mul_cancel_right as "inv_mul_cancel_right" in "Group Theory"
-  "Cancelling inverses on the right. "
-LemmaDoc inv_mul_self as "inv_mul_self" in "Group Theory"
-  "Cancelling an element with its own inverse."
+/-- The statement echoing the definition of commutator. -/
+TheoremDoc MyCommutator.commutator_def as "commutator_def" in "Group Theory"
 
-NewLemma commutator_def conjugate_def inv_mul_cancel_right inv_mul_self
+/-- The statement echoing the definition of conjugate. -/
+TheoremDoc MyCommutator.conjugate_def as "conjugate_def" in "Group Theory"
+
+/-- Cancelling inverses on the right. -/
+TheoremDoc inv_mul_cancel_right as "inv_mul_cancel_right" in "Group Theory"
+
+/-- Cancelling an element with its own inverse. -/
+TheoremDoc inv_mul_cancel as "inv_mul_cancel" in "Group Theory"
+
+NewTheorem MyCommutator.commutator_def MyCommutator.conjugate_def inv_mul_cancel_right inv_mul_cancel

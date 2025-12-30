@@ -1,5 +1,5 @@
 import Game.Metadata
-import Mathlib.Topology.Basic
+import Mathlib.Topology.Continuous
 
 World "Intermediate"
 Level 6
@@ -27,10 +27,10 @@ Statement (X Y Z : Type*) [TopologicalSpace X] [TopologicalSpace Y] [Topological
   apply hS
 
 
-LemmaDoc continuous_def as "continuous_def" in "Topology"
-  "The statement echoing the definition of a continuous map."
+/-- The statement echoing the definition of a continuous map. -/
+TheoremDoc continuous_def as "continuous_def" in "Topology"
 
-LemmaDoc Set.preimage_comp as "Set.preimage_comp" in "Topology"
-  "The preimage of a set along the composition of maps."
+/-- The preimage of a set along the composition of maps. -/
+TheoremDoc Set.preimage_comp as "Set.preimage_comp" in "Topology"
 
-NewLemma continuous_def Set.preimage_comp
+NewTheorem continuous_def Set.preimage_comp
