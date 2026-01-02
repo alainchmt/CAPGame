@@ -44,7 +44,7 @@ just above, `revert p` turns the goal back into `⊢ P → Q`.
 
 ## Example
 
-If your goal is an implication $P \\implies Q$ then Lean writes
+If your goal is an implication $P \implies Q$ then Lean writes
 this as `⊢ P → Q`, and `intro p` can be thought of as meaning
 'let $p$ be a proof of $P$', or more informally 'let's assume that
 $P$ is true'. The goal changes to `⊢ Q` and the hypothesis `p : P`

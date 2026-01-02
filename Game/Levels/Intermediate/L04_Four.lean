@@ -26,39 +26,39 @@ definitions, we just made use of the natural numbers, propositions, and some lem
 already knew about.
 
 ```
-def commutator {G : Type*} [Group G]
+def commutator {G : Type} [Group G]
 (x y : G) : G := x⁻¹ * y⁻¹ * x * y
 ```
 ```
-def conjugate {G : Type*} [group G]
+def conjugate {G : Type} [group G]
 (x y : G) : G := y⁻¹ * x * y
 ```
 
 We denote by `[x ; y]` the commutator of x and y, and by `y ^ x` the conjugate of x by y.
 
 ```
-lemma commutator_def {G : Type*} [Group G]
+lemma commutator_def {G : Type} [Group G]
 {x y : G} : [x ; y] = x⁻¹ * y⁻¹ * x * y := rfl
 ```
 ```
-lemma conjugate_def {G : Type*} [Group G]
+lemma conjugate_def {G : Type} [Group G]
 {x y : G} : y ^ x = x⁻¹ * y * x := rfl
 ```
  "
 namespace MyCommutator
 
-def commutator {G : Type*} [Group G] (x y : G) : G := x⁻¹ * y⁻¹ * x * y
-instance hasBracket {G : Type*} [Group G] : Bracket G G := ⟨commutator⟩
+def commutator {G : Type} [Group G] (x y : G) : G := x⁻¹ * y⁻¹ * x * y
+instance hasBracket {G : Type} [Group G] : Bracket G G := ⟨commutator⟩
 notation "["x";"y"]" => Bracket.bracket x y
 
 --notation: max "⁅"x" , "y"⁆" => commutator x y
 
-def conjugate  {G : Type*} [Group G] (x y : G) : G := y⁻¹ * x * y
-instance Group.has_pow {G : Type*} [Group G] : Pow G G := ⟨conjugate⟩
+def conjugate  {G : Type} [Group G] (x y : G) : G := y⁻¹ * x * y
+instance Group.has_pow {G : Type} [Group G] : Pow G G := ⟨conjugate⟩
 
-lemma commutator_def {G : Type*} [Group G] {x y : G} : [x ; y] = x⁻¹ * y⁻¹ * x * y := rfl
+lemma commutator_def {G : Type} [Group G] {x y : G} : [x ; y] = x⁻¹ * y⁻¹ * x * y := rfl
 
-lemma conjugate_def {G : Type*} [Group G] {x y : G} : y ^ x = x⁻¹ * y * x := rfl
+lemma conjugate_def {G : Type} [Group G] {x y : G} : y ^ x = x⁻¹ * y * x := rfl
 
 Statement {G : Type} [Group G] {x : G} : [x ; x] = 1 := by
   rw [commutator_def]

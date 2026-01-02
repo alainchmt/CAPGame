@@ -16,7 +16,7 @@ And some new lemmas that are in the sidebar for you.
 
 "
 
-Statement (X Y Z : Type*) [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
+Statement (X Y Z : Type) [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
   (f : X → Y) (g : Y → Z) (hf : Continuous f) (hg : Continuous g) :
   Continuous (g ∘ f) := by
   rw [continuous_def] at *

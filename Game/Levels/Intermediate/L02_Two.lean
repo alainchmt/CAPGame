@@ -55,9 +55,9 @@ simple: if you are trying to create a term of type `Q`,
 but `h` is a function that turns terms of type `P` into
 terms of type `Q`, then it will suffice to construct a
 term of type `P`. A mathematician might say: 'We need
-to construct an element of $Q$, but we have a function $h:P \\to Q$
+to construct an element of $Q$, but we have a function $h:P \to Q$
 so it suffices to construct an element of $P$'. Or alternatively
-'we need to prove $Q$, but we have a proof $h$ that $P \\implies Q$
+'we need to prove $Q$, but we have a proof $h$ that $P \implies Q$
 so it suffices to prove $P$'.-/
 TacticDoc apply
 

@@ -148,7 +148,7 @@ all `X`s in the goal to `Y`s.
 As this is such a common proof step we also have a short name, `rw` instead of `rewrite` for this
 step, to save us from too much typing.
 
-Variants: `rw [← h]` (type `←` using `\\l` for left) changes
+Variants: `rw [← h]` (type `←` using `\l` for left) changes
 `Y` to `X` and
 `rw [h] at h2` changes `X` to `Y` in hypothesis `h2` instead
 of the goal.
@@ -170,7 +170,7 @@ statement itself, not the proof.
 If `h : P = Q` is its proof, then `rw [h]` will work.
 
 Pro tip 1: If `h : A = B` and you want to change
-`B`s to `A`s instead, try `rw [← h]` (get the arrow with `\\l`,
+`B`s to `A`s instead, try `rw [← h]` (get the arrow with `\l`,
 note that this is a small letter L, not a number 1).
 
 ### Example:
